@@ -62,7 +62,7 @@ function password()
 {
    read -p "Enter password: " password
 
-   pat5="[a-zA-Z0-9]{8,}$"
+   pat5="^[a-zA-Z]{8,}$"
    
    if [[ $password =~ $pat5 ]]
    then
