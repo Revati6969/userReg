@@ -58,33 +58,24 @@ function mobileNumber()
    fi
 }
 
-function password()
+function password1()
 {
    read -p "Enter password: " password
 
-   pat5="[a-zA-Z]{8,}$"
-   
-   if [[ $password =~ $pat5 ]]
+   pat5="[a-zA-Z0-9]{8,}$"
+   pat6="^([a-zA-Z0-9]*[A-Z]+[a-zA-Z0-9]*)$"
+   pat7="^([a-zA-Z0-9]*[A-Z]+[a-zA-Z0-9]*[0-9]+[a-zA-Z0-9]*)$"
+
+   if [[ ${#password} -gt 7 && $password =~ $pat6 ]]
    then
-      password2 $password
+		echo "Valid"
    else
-      echo "Not valid"
+      echo "not valid"
    fi
 }
 
-function password2()
-{
-   pat6="[A-Z]"
-   if [[ $password =~ $pat6 ]]
-   then
-      echo "Valid"
-   else
-      echo "capital char is missing"
-   fi
-}
-
-firstName 
-lastName
-email
-mobileNumber
-password
+#firstName 
+#lastName
+#email
+#mobileNumber
+password1
