@@ -62,18 +62,29 @@ function password()
 {
    read -p "Enter password: " password
 
-   pat5="^[a-zA-Z]{8,}$"
+   pat5="[a-zA-Z]{8,}$"
    
    if [[ $password =~ $pat5 ]]
    then
-      echo "Valid"
+      password2 $password
    else
       echo "Not valid"
    fi
 }
 
-#firstName 
-#lastName
-#email
-#mobileNumber
+function password2()
+{
+   pat6="[A-Z]"
+   if [[ $password =~ $pat6 ]]
+   then
+      echo "Valid"
+   else
+      echo "capital char is missing"
+   fi
+}
+
+firstName 
+lastName
+email
+mobileNumber
 password
