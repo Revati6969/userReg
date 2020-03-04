@@ -1,15 +1,18 @@
-
 #!/bin/bash -x
+
+shopt -s extglob
 
 echo "Welcome to user registration"
 
 #read -p "Enter first name: " first
-read -p "Enter last name: " last
+#read -p "Enter last name: " last 
+read -p "Enter email: " email
 
-pattern1="^[A-Z][a-z]{2,}$"
-pattern2="^[A-Z][a-z]{2,}$"
+pat1="^[A-Z][a-z]{2,}$"
+pat2="^[A-Z][a-z]{2,}$"
+pat3="^[a-zA-Z]+([+]?[-]?[.]?[_]?[a-zA-Z0-9]{1,})?[@]{1}[a-zA-Z0-9]+[.]{1}[a-z]+([.]?[a-z]+)?$"
 
-if [[ $first =~ $pattern2 ]]
+if [[ $email =~ $pat3 ]]
 then
    echo "Valid"
 else
