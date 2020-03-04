@@ -58,8 +58,22 @@ function mobileNumber()
    fi
 }
 
-firstName 
-lastName
-email
-mobileNumber
-mobileNumber 
+function password()
+{
+   read -p "Enter password: " password
+
+   pat5="[a-zA-Z0-9]{8,}$"
+   
+   if [[ $password =~ $pat5 ]]
+   then
+      echo "Valid"
+   else
+      echo "Not valid"
+   fi
+}
+
+#firstName 
+#lastName
+#email
+#mobileNumber
+password
