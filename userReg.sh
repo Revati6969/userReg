@@ -60,13 +60,13 @@ function mobileNumber()
 
 function password1()
 {
-   read -p "Enter password: " password
+#   read -p "Enter password: " password
 
    pat5="[a-zA-Z0-9]{8,}$"
-   pat6="^([a-zA-Z0-9]*[A-Z]+[a-zA-Z0-9]*)$"
-   pat7="^([a-zA-Z0-9]*[A-Z]+[a-zA-Z0-9]*[0-9]+[a-zA-Z0-9]*)$"
-
-   if [[ ${#password} -gt 7 && $password =~ $pat6 ]]
+   pat6="^([a-zA-Z0-9]*[A-Z]+[a-zA-Z0-9]*)+$"
+   pat7="^([a-zA-Z0-9]*[A-Z0-9]+[a-zA-Z0-9]*[0-9]+[a-zA-Z0-9]*)+$"
+  
+   if [[ ${#password} -gt 7 && $password =~ $pat7 ]]
    then
 		echo "Valid"
    else
@@ -78,4 +78,6 @@ function password1()
 #lastName
 #email
 #mobileNumber
+read -p "Enter password: " password
+
 password1
